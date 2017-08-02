@@ -22,12 +22,12 @@ if (arg === '-h' || arg === '--help') {
 	console.log(`
  Usage: stalk <user>
 
- Commands: 
+ Commands:
   -h, ${chalk.dim('--help')}    Display help
 
  Help:
   $ stalk 9gag
- 
+
  You can also use:
 
  ${pre} ${chalk.dim('instavim  : complete instagram media downloader')}
@@ -53,7 +53,9 @@ dns.lookup('instagram.com', err => {
 
 		got(profile, {json: true}).then(res => {
 			logUpdate(`
-${pre} Full Name      :  ${res.body.user.full_name || `${arg}'s full name is not available!`} 
+${pre} Full Name      :  ${res.body.user.full_name || `${arg}'s full name is not available!`}
+
+${pre} Posts          :  ${res.body.user.media.count}
 
 ${pre} Biography      :  ${res.body.user.biography}
 
