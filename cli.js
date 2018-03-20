@@ -53,17 +53,17 @@ dns.lookup('instagram.com', err => {
 
 		got(profile, {json: true}).then(res => {
 			logUpdate(`
-${pre} Full Name      :  ${res.body.user.full_name || `${arg}'s full name is not available!`}
+${pre} Full Name      :  ${res.body.graphql.user.full_name || `${arg}'s full name is not available!`}
 
-${pre} Posts          :  ${res.body.user.media.count}
+${pre} Posts          :  ${res.body.graphql.user.edge_owner_to_timeline_media.count}
 
-${pre} Biography      :  ${res.body.user.biography}
+${pre} Biography      :  ${res.body.graphql.user.biography}
 
-${pre} Followers      :  ${res.body.user.followed_by.count}
+${pre} Followers      :  ${res.body.graphql.user.edge_followed_by.count}
 
-${pre} Following      :  ${res.body.user.follows.count}
+${pre} Following      :  ${res.body.graphql.user.edge_follow.count}
 
-${pre} External link  :  ${res.body.user.external_url || `no external url provided by ${arg}`}
+${pre} External link  :  ${res.body.graphql.user.external_url || `no external url provided by ${arg}`}
 				`);
 			spinner.stop();
 		}).catch(err => {
