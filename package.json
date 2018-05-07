@@ -35,8 +35,8 @@
     "update-notifier": "^2.2.0"
   },
   "devDependencies": {
-    "ava": "*",
-    "xo": "*"
+    "ava": "^0.15.0",
+    "xo": "^0.16.0"
   },
   "xo": {
     "esnext": true
