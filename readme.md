@@ -40,10 +40,12 @@ __`Why?`__
 
 ## Related
 
-- __[`instavim`](https://www.npmjs.com/package/instavim)__ `:` `A complete instagram media downloader`
-- __[`instafy`](https://www.npmjs.com/package/instafy)__ `:` `Instagram post notifications from the command line`
-- __[`twifo`](https://www.npmjs.com/package/twifo-cli)__ `:` `Twitter user information`
-- __[`gravator`](https://www.npmjs.com/package/gravator-cli)__ `:` `Gravatar user information`
+- __[`instavim`](https://https://github.com/CodeDotJS/instavim)__ `:` `A complete instagram media downloader`
+- __[`instagram-id-of`](https://github.com/CodeDotJS/instagram-id-of)__ `:` `Easily find user id of any instagram user from the command line`
+- __[`instagram-profile-picture`](https://github.com/CodeDotJS/instagram-profile-picture)__ `:` `Get url to the profile picture of any instagram user in different resolutions`
+- __[`instagram-links`](https://github.com/CodeDotJS/Instagram-links)__ `:` `Get links to the publicly shared media on Instagram`
+- __[`basic-instagram-user-details`](https://github.com/CodeDotJS/basic-instagram-user-details)__ `:` `A simple API to scrap basic details of an instagram user`
+- __[`instafy`](https://https://github.com/CodeDotJS/instafy)__ `:` `Instagram post notifications from the command line`
 
 ## License
 
