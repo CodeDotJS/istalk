@@ -8,6 +8,7 @@ const chalk = require('chalk');
 const ora = require('ora');
 const logUpdate = require('log-update');
 const updateNotifier = require('update-notifier');
+const strip = require('unicodechar-string');
 const pkg = require('./package.json');
 
 updateNotifier({pkg}).notify();
@@ -51,23 +52,17 @@ dns.lookup('instagram.com', err => {
 		spinner.text = `Hold your breath, sucker!`;
 		spinner.start();
 
-		const convert = text => {
-			return text.replace(/\\u[\dA-Fa-f]{4}/g, match => {
-				return String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16));
-			});
-		};
-
 		got(profile).then(res => {
 			let message = '';
 
 			const usr = res.body.split(`"external_url":`)[1].split(',"')[0] === 'null' ? message += chalk.red('no external url found') : message += res.body.split(`"external_url":"`)[1].split(`","`)[0];
 
 			logUpdate(`
-${pre} Full Name      :  ${convert(res.body.split('full_name":"')[1].split(`","`)[0]) || chalk.red(`${arg}'s full name is not available!`)}
+${pre} Full Name      :  ${strip(res.body.split('full_name":"')[1].split(`","`)[0]) || chalk.red(`${arg}'s full name is not available!`)}
 
 ${pre} Posts          :  ${res.body.split(`,"edge_owner_to_timeline_media":{"count":`)[1].split(`,"`)[0]}
 
-${pre} Biography      :  ${convert(res.body.split(`"biography":"`)[1].split(`","`)[0]) || `${chalk.red('no biography found')}`}
+${pre} Biography      :  ${strip(res.body.split(`"biography":"`)[1].split(`","`)[0]) || `${chalk.red('no biography found')}`}
 
 ${pre} Followers      :  ${res.body.split(`,"edge_followed_by":{"count":`)[1].split(`},"`)[0]}
 
