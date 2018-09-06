@@ -27,7 +27,6 @@
   ],
   "dependencies": {
     "chalk": "^2.0.1",
-    "cheerio": "^1.0.0-rc.2",
     "fs-extra": "^4.0.0",
     "got": "^6.3.0",
     "log-update": "^2.0.0",
