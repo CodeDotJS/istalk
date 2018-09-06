@@ -73,8 +73,8 @@ ${pre} Following      :  ${res.body.split(',"edge_follow":{"count":')[1].split('
 ${pre} External link  :  ${usr}
 				`);
 			spinner.stop();
-		}).catch(error => {
-			if (error) {
+		}).catch(err => {
+			if (err) {
 				logUpdate(`\n${pos} ${arg} is not an Instagram user! \n`);
 				process.exit(1);
 			}
